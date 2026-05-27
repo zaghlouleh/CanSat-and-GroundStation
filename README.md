@@ -25,14 +25,14 @@ The CanSat system is a **three-board telemetry chain** designed for high-altitud
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  [ESP32D]──LoRa 433MHz──→[BW16]──UART 9600──→[Arduino Nano]   │
+│  [ESP32D]──LoRa 433MHz──→[BW16]──UART 9600──→[Arduino Nano]     │
 │  Transmitter   ~12 km     Receiver             Logger + SD Card │
 │                         (LCD Display)                           │
 │                                                                 │
-│  • 6 Sensors         • LoRa RX           • Persistent Storage  │
-│  • LoRa TX           • ST7920 LCD        • Data Timestamping   │
-│  • 2s telemetry      • LED Indicators    • Human-readable      │
-│                      • Bridge Logic      • CSV-compatible      │
+│  • 6 Sensors         • LoRa RX           • Persistent Storage   │
+│  • LoRa TX           • ST7920 LCD        • Data Timestamping    │
+│  • 2s telemetry      • LED Indicators    • Human-readable       │
+│                      • Bridge Logic      • CSV-compatible       │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
