@@ -1,0 +1,49 @@
+# SPDX-REUSE specification configuration
+# https://reuse.software/spec-0.16/
+#
+# This file defines SPDX license metadata for the CanSat Ground Station project.
+# The REUSE specification ensures proper license compliance and attribution.
+
+version = "0.16"
+
+[[annotations]]
+path = "LICENSE"
+precedence = "highest"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "README.md"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "TUTORIALS.md"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "CanSat ESP32D/CanSat_ESP_32D.ino"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "Ground Station BW16/Ground_Station_BW16.ino"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "Ground Station NANO/Ground_Station_NANO.ino"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "*.txt"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+
+[[annotations]]
+path = "*.md"
+SPDX-License-Identifier = "MIT"
+SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
+

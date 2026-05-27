@@ -1,0 +1,182 @@
+REUSE Compliance & License Management Guide
+
+This project follows the SPDX-REUSE specification (https://reuse.software/) to ensure
+proper license attribution and compliance.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. PROJECT LICENSE
+
+  License Type:   MIT License
+  Copyright:      Copyright (c) 2026 CanSat Development Team
+  Scope:          All source code and documentation
+  File:           LICENSE (root directory)
+
+  The MIT License permits:
+    ✓ Commercial use
+    ✓ Modification
+    ✓ Distribution
+    ✓ Private use
+  
+  Conditions:
+    • Include license and copyright notice
+    • Include notice of changes
+    • Include copy of MIT License
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2. LICENSE COMPLIANCE CONFIGURATION
+
+  SPDX License Metadata File:  REUSE.toml
+  
+  Configured for:
+    • README.md – Project documentation
+    • TUTORIALS.md – Tutorial guides
+    • *.ino – Arduino firmware source files
+    • *.txt – Reference documents
+    • *.md – Markdown documentation
+    • *.toml – Configuration files
+
+  All files mapped to: MIT License (SPDX-License-Identifier: MIT)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3. VERIFY REUSE COMPLIANCE
+
+  Install the REUSE tool (recommended):
+    
+    Linux/macOS:
+    $ pip install reuse
+    
+    Or using system package manager:
+    $ apt install reuse              # Debian/Ubuntu
+    $ brew install reuse              # macOS with Homebrew
+
+  Check compliance:
+    
+    $ cd /path/to/CanSat_Ground_Station
+    $ reuse lint
+    
+  Expected output (if compliant):
+    ✓ All files have proper SPDX headers or are covered by REUSE.toml
+    ✓ No license compliance issues detected
+    
+  Generate SPDX report:
+    
+    $ reuse spdx --output SPDX.json
+    $ reuse spdx --output SPDX.spdx
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4. ADDING SPDX HEADERS TO NEW FILES
+
+  Option A: Manual header (recommended for source files)
+  
+    Add this to the top of each .ino file:
+    
+    // SPDX-License-Identifier: MIT
+    // SPDX-FileCopyrightText: Copyright (c) 2026 CanSat Development Team
+    
+    // Firmware for CanSat Transmitter / Receiver / Logger
+    // ...rest of file...
+  
+  Option B: Automated header insertion
+  
+    $ reuse addheader --year 2026 --license MIT [filename]
+    
+  Option C: REUSE.toml configuration (current approach)
+  
+    • Files are listed in REUSE.toml with license metadata
+    • No need to modify file headers
+    • Centralized license management
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+5. THIRD-PARTY DEPENDENCIES
+
+  Arduino Libraries (installed via Arduino IDE):
+  
+    DHT sensor library              - MIT License (Adafruit)
+    Adafruit BMP085                 - MIT License (Adafruit)
+    Adafruit MPU6050                - MIT License (Adafruit)
+    Adafruit Unified Sensor         - MIT License (Adafruit)
+    TinyGPS++                        - MIT License (Mikal Hart)
+    U8g2                            - MIT License (Oliver Krause)
+    SD                              - MIT License (Arduino)
+    SPI                             - MIT License (Arduino)
+    Wire                            - MIT License (Arduino)
+    SoftwareSerial                  - MIT License (Arduino)
+  
+  Python Packages (optional, in requirements.txt):
+  
+    pyserial                        - BSD License
+    numpy                           - BSD License
+    pandas                          - BSD 3-Clause License
+    matplotlib                      - PSF License
+  
+  All compatible with MIT License (permissive open-source)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+6. TYPICAL WORKFLOW
+
+  When adding a new file:
+  
+    1. Create the file (e.g., new_feature.ino)
+    2. Add SPDX header (Option A) OR update REUSE.toml
+    3. Run: reuse lint
+    4. Commit with message: "Add new_feature.ino (REUSE compliant)"
+    
+  When modifying existing files:
+  
+    1. Edit file normally
+    2. No need to update license headers (already configured)
+    3. Run: reuse lint (verify still compliant)
+    4. Commit normally
+
+  Before releasing/publishing:
+  
+    1. Run: reuse spdx --output SPDX.json
+    2. Include SPDX.json in distribution (recommended)
+    3. Run: reuse lint (verify compliance)
+    4. Tag release with REUSE-compliant marker
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+7. COMMON QUESTIONS
+
+  Q: Do I need to add license headers to every file?
+  A: No, REUSE.toml handles it centrally. Manual headers are optional but recommended
+     for clarity in source code.
+
+  Q: What if I use a different license for a specific file?
+  A: Update REUSE.toml with a new [[annotations]] block for that file.
+
+  Q: Can I contribute code under a different license?
+  A: Only if compatible with MIT (e.g., Apache 2.0, BSD). GPL is NOT compatible.
+
+  Q: How do I document license changes?
+  A: Update REUSE.toml and include SPDX-License-Identifier in file headers.
+
+  Q: Is REUSE compliance required on GitHub?
+  A: Not required, but recommended for:
+     • Automated compliance checking (REUSE badge)
+     • Legal clarity for users and contributors
+     • Interoperability with other projects
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+8. RESOURCES
+
+  REUSE Official Website:       https://reuse.software/
+  MIT License Full Text:        https://opensource.org/licenses/MIT
+  SPDX License List:            https://spdx.org/licenses/
+  SPDX Identifier Syntax:       https://spdx.github.io/spdx-spec/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For questions or issues, please refer to:
+  • REUSE Documentation: https://reuse.software/docs/
+  • Project Issues: GitHub Issues
+  • MIT License FAQ: https://opensource.org/licenses/MIT
+

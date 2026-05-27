@@ -1,0 +1,312 @@
+
+# RAW SERIAL TRACE (DO NOT EDIT FOR CONFIG)
+# Clean documentation lives here:
+# - docs/lora-configuration.md
+# - docs/lora-master-at-session.md
+#
+# This file records AT-mode interactions (e.g., '+++', AT+HELP, AT+CHANNELxx, AT+MACxx, AT+LEVELxx)
+# as observed in Serial Monitor.
+
+
+
+[2026-05-02 11:34:09.664]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:34:09.831]# RECV ASCII/10 <<<
+Entry AT
+
+
+[2026-05-02 11:34:17.592]# SEND ASCII/9 >>>
+AT+HELP
+
+
+[2026-05-02 11:34:17.797]# RECV ASCII/64 <<<
+===================================
+LoRa Parameter:
++VERSION=V
+
+[2026-05-02 11:34:17.844]# RECV ASCII/32 <<<
+2.3.2
+MODE:0
+LEVEL:0 >> 244.14
+
+[2026-05-02 11:34:17.875]# RECV ASCII/32 <<<
+0625bps
+SLEEP:2
+Frequency:4372
+
+[2026-05-02 11:34:17.906]# RECV ASCII/32 <<<
+00000hz >> 03
+MAC:00,01
+Bandwi
+
+[2026-05-02 11:34:17.937]# RECV ASCII/32 <<<
+dth:0
+Spreading Factor:12
+Codi
+
+[2026-05-02 11:34:18.001]# RECV ASCII/64 <<<
+ng rate:2
+CRC:0(false)
+Preamble:8
+IQ:0(false)
+Power:5
+=====
+
+[2026-05-02 11:34:18.047]# RECV ASCII/32 <<<
+==============================
+
+
+[2026-05-02 11:34:39.714]# SEND ASCII/14 >>>
+AT+CHANNEL03
+
+
+[2026-05-02 11:34:39.892]# RECV ASCII/17 <<<
++CHANNEL=03
+OK
+
+
+[2026-05-02 11:34:45.573]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:34:45.734]# RECV ASCII/9 <<<
+Exit AT
+
+
+[2026-05-02 11:34:46.095]# RECV ASCII/10 <<<
+Power on
+
+
+[2026-05-02 11:34:47.646]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:34:47.807]# RECV ASCII/10 <<<
+Entry AT
+
+
+[2026-05-02 11:34:58.112]# SEND ASCII/9 >>>
+AT+HELP
+
+
+[2026-05-02 11:34:58.296]# RECV ASCII/32 <<<
+================================
+
+[2026-05-02 11:34:58.359]# RECV ASCII/64 <<<
+===
+LoRa Parameter:
++VERSION=V2.3.2
+MODE:0
+LEVEL:0 >> 244.14
+
+[2026-05-02 11:34:58.420]# RECV ASCII/64 <<<
+0625bps
+SLEEP:2
+Frequency:437200000hz >> 03
+MAC:00,01
+Bandwi
+
+[2026-05-02 11:34:58.483]# RECV ASCII/64 <<<
+dth:0
+Spreading Factor:12
+Coding rate:2
+CRC:0(false)
+Preambl
+
+[2026-05-02 11:34:58.531]# RECV ASCII/32 <<<
+e:8
+IQ:0(false)
+Power:5
+=====
+
+[2026-05-02 11:34:58.578]# RECV ASCII/32 <<<
+==============================
+
+
+[2026-05-02 11:35:11.194]# SEND ASCII/13 >>>
+AT+MAC00,01
+
+
+[2026-05-02 11:35:11.362]# RECV ASCII/16 <<<
++MAC=00,01
+OK
+
+
+[2026-05-02 11:35:16.628]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:35:16.798]# RECV ASCII/9 <<<
+Exit AT
+
+
+[2026-05-02 11:35:17.157]# RECV ASCII/10 <<<
+Power on
+
+
+[2026-05-02 11:35:17.439]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:35:17.612]# RECV ASCII/10 <<<
+Entry AT
+
+
+[2026-05-02 11:35:26.818]# SEND ASCII/9 >>>
+AT+HELP
+
+
+[2026-05-02 11:35:27.026]# RECV ASCII/64 <<<
+===================================
+LoRa Parameter:
++VERSION=V
+
+[2026-05-02 11:35:27.089]# RECV ASCII/64 <<<
+2.3.2
+MODE:0
+LEVEL:0 >> 244.140625bps
+SLEEP:2
+Frequency:4372
+
+[2026-05-02 11:35:27.135]# RECV ASCII/32 <<<
+00000hz >> 03
+MAC:00,01
+Bandwi
+
+[2026-05-02 11:35:27.197]# RECV ASCII/64 <<<
+dth:0
+Spreading Factor:12
+Coding rate:2
+CRC:0(false)
+Preambl
+
+[2026-05-02 11:35:27.260]# RECV ASCII/64 <<<
+e:8
+IQ:0(false)
+Power:5
+===================================
+
+
+[2026-05-02 11:40:02.368]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:40:02.542]# RECV ASCII/9 <<<
+Exit AT
+
+
+[2026-05-02 11:40:02.888]# RECV ASCII/10 <<<
+Power on
+
+
+[2026-05-02 11:40:10.381]# SEND ASCII/5 >>>
+AAA
+
+
+[2026-05-02 11:40:17.093]# RECV ASCII/5 <<<
+KKK
+
+
+[2026-05-02 11:41:22.430]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:41:22.593]# RECV ASCII/10 <<<
+Entry AT
+
+
+[2026-05-02 11:41:35.138]# SEND ASCII/10 >>>
+AT+LEVEL
+
+
+[2026-05-02 11:41:35.301]# RECV ASCII/10 <<<
++LEVEL=0
+
+
+[2026-05-02 11:42:13.847]# SEND ASCII/11 >>>
+AT+LEVEL7
+
+
+[2026-05-02 11:42:14.007]# RECV ASCII/4 <<<
+OK
+
+
+[2026-05-02 11:42:18.362]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:42:18.529]# RECV ASCII/9 <<<
+Exit AT
+
+
+[2026-05-02 11:42:18.886]# RECV ASCII/10 <<<
+Power on
+
+
+[2026-05-02 11:42:19.888]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:42:20.055]# RECV ASCII/10 <<<
+Entry AT
+
+
+[2026-05-02 11:42:27.279]# SEND ASCII/9 >>>
+AT+HELP
+
+
+[2026-05-02 11:42:27.486]# RECV ASCII/64 <<<
+===================================
+LoRa Parameter:
++VERSION=V
+
+[2026-05-02 11:42:27.550]# RECV ASCII/64 <<<
+2.3.2
+MODE:0
+LEVEL:7 >> 13020.833984bps
+SLEEP:2
+Frequency:43
+
+[2026-05-02 11:42:27.613]# RECV ASCII/64 <<<
+7200000hz >> 03
+MAC:00,01
+Bandwidth:0
+Spreading Factor:5
+Cod
+
+[2026-05-02 11:42:27.659]# RECV ASCII/32 <<<
+ing rate:2
+CRC:0(false)
+Preamb
+
+[2026-05-02 11:42:27.706]# RECV ASCII/32 <<<
+le:8
+IQ:0(false)
+Power:5
+====
+
+[2026-05-02 11:42:27.755]# RECV ASCII/33 <<<
+===============================
+
+
+[2026-05-02 11:43:53.400]# SEND ASCII/5 >>>
++++
+
+
+[2026-05-02 11:43:53.567]# RECV ASCII/9 <<<
+Exit AT
+
+
+[2026-05-02 11:43:53.929]# RECV ASCII/10 <<<
+Power on
+
+
+[2026-05-02 11:43:57.848]# SEND ASCII/8 >>>
+AAAAAA
+
+
+[2026-05-02 11:44:05.044]# RECV ASCII/6 <<<
+LLLL
+
