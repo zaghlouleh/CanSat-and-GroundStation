@@ -23,17 +23,17 @@ SPDX-License-Identifier = "MIT"
 SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
 
 [[annotations]]
-path = "CanSat ESP32D/CanSat_ESP_32D.ino"
+path = "CanSat/CanSat_ESP_32D/CanSat_ESP_32D.ino"
 SPDX-License-Identifier = "MIT"
 SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
 
 [[annotations]]
-path = "Ground Station BW16/Ground_Station_BW16.ino"
+path = "Ground Station/Ground_Station_BW16/Ground_Station_BW16.ino"
 SPDX-License-Identifier = "MIT"
 SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
 
 [[annotations]]
-path = "Ground Station NANO/Ground_Station_NANO.ino"
+path = "Ground Station/Ground_Station_NANO/Ground_Station_NANO.ino"
 SPDX-License-Identifier = "MIT"
 SPDX-FileCopyrightText = "Copyright (c) 2026 CanSat Development Team"
 

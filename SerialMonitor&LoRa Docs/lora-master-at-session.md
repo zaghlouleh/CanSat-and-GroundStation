@@ -1,9 +1,9 @@
 # LoRa Master AT Session (ESP32D)
 
-This file turns the raw Serial Monitor trace in `CanSat ESP32D/LoRa_Master.txt` into a readable “session” format.
+This file turns the raw Serial Monitor trace in `CanSat/CanSat_ESP_32D/LoRa_Master.txt` into a readable “session” format.
 
 Source (raw trace):
-- `CanSat ESP32D/LoRa_Master.txt`
+- `CanSat/CanSat_ESP_32D/LoRa_Master.txt`
 
 ---
 

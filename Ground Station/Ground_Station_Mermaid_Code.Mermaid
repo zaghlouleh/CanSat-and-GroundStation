@@ -1,0 +1,214 @@
+flowchart LR
+
+%% =====================================================
+%% POWER SYSTEM
+%% =====================================================
+
+BAT["LiPo Battery
+3.7V 5000mAh"]
+
+MH["MH-CD42
+B+
+B-
+5V OUT
+GND"]
+
+P5["+5V BUS"]
+GND["COMMON GND"]
+
+BAT -->|"B+"| MH
+BAT -->|"B-"| MH
+
+MH -->|"5V OUT"| P5
+MH -->|"GND"| GND
+
+%% =====================================================
+%% BW16
+%% =====================================================
+
+BW16["BW16 (RTL8720DN)
+
+5V
+3V3
+GND
+
+PB2 RX1
+PB1 TX1
+
+PA25 LCD_E
+PA27 LCD_DATA
+PA26 LCD_CS
+
+PA30 GREEN_LED
+PA12 RED_LED
+
+PA13 RGB_RED
+PA14 RGB_GREEN
+PB3 RGB_BLUE
+
+PA7 UART_TX
+PA8 UART_RX
+"]
+
+P5 -->|"5V"| BW16
+GND -->|"GND"| BW16
+
+%% =====================================================
+%% ARDUINO NANO
+%% =====================================================
+
+NANO["Arduino Nano
+
+5V
+GND
+
+D0 RX
+D1 TX
+
+D9 LED
+
+D10 CS
+D11 MOSI
+D12 MISO
+D13 SCK
+"]
+
+P5 -->|"5V"| NANO
+GND -->|"GND"| NANO
+
+%% =====================================================
+%% LORA RECEIVER
+%% =====================================================
+
+LORA["DX-LR03-433T30D
+
+Pin6 VCC
+TX
+RX
+GND"]
+
+P5 -->|"Pin6 VCC"| LORA
+GND -->|"GND"| LORA
+
+LORA -->|"TX → PB2 RX1"| BW16
+BW16 -->|"PB1 TX1 → RX"| LORA
+
+%% =====================================================
+%% ST7920 LCD
+%% =====================================================
+
+LCD["ST7920 LCD
+Serial Mode
+
+VCC
+GND
+
+RS/CS
+RW/SID
+E/SCLK
+
+PSB
+RST
+"]
+
+P5 -->|"VCC"| LCD
+GND -->|"GND"| LCD
+
+BW16 -->|"PA26 → RS/CS"| LCD
+BW16 -->|"PA27 → RW/SID"| LCD
+BW16 -->|"PA25 → E/SCLK"| LCD
+
+LCD -->|"PSB → GND"| GND
+P5 -->|"RST"| LCD
+
+%% =====================================================
+%% LEVEL SHIFTER
+%% =====================================================
+
+LS["2-Channel Logic Level Shifter
+
+LV (3.3V)
+HV (5V)
+
+LV1 ↔ HV1
+LV2 ↔ HV2
+
+LV_GND
+HV_GND
+"]
+
+BW33["+3.3V from BW16"]
+
+BW16 -->|"PA7 TX → LV1"| LS
+LS -->|"HV1 → D0 RX"| NANO
+
+NANO -->|"D1 TX → HV2"| LS
+LS -->|"LV2 → PA8 RX"| BW16
+
+BW33 -->|"LV"| LS
+P5 -->|"HV"| LS
+
+GND -->|"LV_GND"| LS
+GND -->|"HV_GND"| LS
+
+%% =====================================================
+%% MICROSD
+%% =====================================================
+
+SD["microSD Adapter
+
+VCC
+GND
+
+CS
+MOSI
+MISO
+SCK
+"]
+
+P5 -->|"VCC"| SD
+GND -->|"GND"| SD
+
+NANO -->|"D10 → CS"| SD
+NANO -->|"D11 → MOSI"| SD
+SD -->|"MISO → D12"| NANO
+NANO -->|"D13 → SCK"| SD
+
+%% =====================================================
+%% STATUS LEDS (BW16)
+%% =====================================================
+
+GREEN["Green LED"]
+RED["Red LED"]
+
+R1["220Ω"]
+R2["220Ω"]
+
+BW16 -->|"PA30"| R1
+R1 --> GREEN
+GREEN --> GND
+
+BW16 -->|"PA12"| R2
+R2 --> RED
+RED --> GND
+
+%% =====================================================
+%% SD WRITE LED (NANO)
+%% =====================================================
+
+BLUE["Blue LED (SD Write)"]
+R3["220Ω"]
+
+NANO -->|"D9"| R3
+R3 --> BLUE
+BLUE --> GND
+
+%% =====================================================
+%% INTERNAL RGB LED
+%% =====================================================
+
+RGB["Internal RGB LED"]
+
+BW16 -->|"PA13 → Red"| RGB
+BW16 -->|"PA14 → Green"| RGB
+BW16 -->|"PB3 → Blue"| RGB

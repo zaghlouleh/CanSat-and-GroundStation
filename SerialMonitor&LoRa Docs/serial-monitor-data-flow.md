@@ -4,10 +4,10 @@ This document explains what you should see in the Serial Monitor for each board,
 
 It is based on the repository draft logs:
 
-- `CanSat ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`
-- `Ground Station BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`
-- `Ground Station NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt`
-- `Ground Station NANO/Ground_Station_NANO_Save_SD_Card.txt`
+- `CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`
+- `Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`
+- `Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt`
+- `Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt`
 
 ---
 
@@ -15,7 +15,7 @@ It is based on the repository draft logs:
 
 ### Example (from draft)
 
-From `CanSat ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`, the Serial Monitor repeats blocks like:
+From `CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`, the Serial Monitor repeats blocks like:
 
 ```text
 +------------------------------------------------------------------------------+
@@ -35,7 +35,7 @@ From `CanSat ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`, the Serial Mo
 [STATUS] CanSat transmitter is operational
 ```
 
-File reference: `CanSat ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`
+File reference: `CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`
 
 ### What you see
 - A repeating table labeled **`CANSAT LIVE TELEMETRY TABLE`**.
@@ -61,11 +61,11 @@ The receiver only processes lines that start with `CS1,`.
 
 ## 2) BW16 (Receiver + LCD + bridge): Serial Monitor = boot handshake + “PKT” forwarding
 
-File reference: `Ground Station BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`
+File reference: `Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`
 
 ### Example (boot + forwarding)
 
-From `Ground Station BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`, you should see a boot block like:
+From `Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`, you should see a boot block like:
 
 ```text
 --- GROUND STATION BOOTING (BW16) ---
@@ -122,7 +122,7 @@ In the draft log, you will see lines like:
 
 ## 3) Arduino Nano (Logger): Serial Monitor = SD handshake + “save table” print
 
-File reference: `Ground Station NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt`
+File reference: `Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt`
 
 ### Example (boot/handshake)
 
@@ -152,7 +152,7 @@ For every incoming packet, the Nano prints:
 
 ## 4) microSD file format (cansat.txt): “Time:” blocks + separator
 
-File reference: `Ground Station NANO/Ground_Station_NANO_Save_SD_Card.txt`
+File reference: `Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt`
 
 ### What you see in the file
 The draft shows the contents written to `cansat.txt`.

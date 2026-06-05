@@ -1,0 +1,149 @@
+flowchart TB
+
+%% =========================
+%% POWER SECTION
+%% =========================
+
+BAT["LiPo Battery 3.7V / 5000mAh
+(+)
+(-)"]
+
+MH["MH-CD42 Charger/Discharger
+B+
+B-
+5V OUT
+GND"]
+
+BAT -->|"+"| MH
+BAT -->|"-"| MH
+
+P5V["+5V Rail"]
+GND["GND Rail"]
+
+MH -->|"5V OUT"| P5V
+MH -->|"GND"| GND
+
+%% =========================
+%% ESP32
+%% =========================
+
+ESP["ESP32
+
+VIN
+3V3
+GND
+
+GPIO4
+GPIO16 (RX2)
+GPIO17 (TX2)
+
+GPIO21 (SDA)
+GPIO22 (SCL)
+
+GPIO26 (RX1)
+GPIO27 (TX1)
+"]
+
+P5V -->|"VIN"| ESP
+GND -->|"GND"| ESP
+
+%% =========================
+%% DHT22
+%% =========================
+
+DHT["DHT22
+
+VCC
+DATA
+GND"]
+
+ESP3V3["+3.3V (ESP32 3V3)"]
+R1["10kΩ Pull-up"]
+
+ESP3V3 --> DHT
+ESP3V3 --> R1
+
+ESP -->|"GPIO4"| DHT
+R1 -->|"Pull-up to DATA"| DHT
+
+GND --> DHT
+
+%% =========================
+%% GPS
+%% =========================
+
+GPS["NEO-6M GPS
+
+VCC
+TX
+RX
+GND"]
+
+P5V --> GPS
+GND --> GPS
+
+GPS -->|"TX → GPIO16 (RX2)"| ESP
+ESP -->|"GPIO17 (TX2) → RX"| GPS
+
+%% =========================
+%% LoRa
+%% =========================
+
+LORA["DX-LR03-433T30D LoRa
+
+Pin6 VCC
+TX
+RX
+GND"]
+
+P5V -->|"Pin6 VCC"| LORA
+GND --> LORA
+
+LORA -->|"TX → GPIO26 (RX1)"| ESP
+ESP -->|"GPIO27 (TX1) → RX"| LORA
+
+%% =========================
+%% BMP180
+%% =========================
+
+BMP["BMP180
+
+VCC
+SDA
+SCL
+GND"]
+
+P5V --> BMP
+GND --> BMP
+
+BMP -->|"SDA → GPIO21"| ESP
+BMP -->|"SCL → GPIO22"| ESP
+
+%% =========================
+%% MPU6050
+%% =========================
+
+MPU["MPU6050
+
+VCC
+SDA
+SCL
+GND"]
+
+P5V --> MPU
+GND --> MPU
+
+MPU -->|"SDA → GPIO21"| ESP
+MPU -->|"SCL → GPIO22"| ESP
+
+%% =========================
+%% SHARED I2C BUS
+%% =========================
+
+I2C["Shared I²C Bus"]
+
+ESP -->|"GPIO21 SDA"| I2C
+ESP -->|"GPIO22 SCL"| I2C
+
+I2C --> BMP
+I2C --> MPU

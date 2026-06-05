@@ -168,17 +168,17 @@ See [TUTORIALS.md](TUTORIALS.md#lora-module-configuration) for step-by-step AT c
 
 **ESP32D:**
 - Board: ESP32 Dev Module
-- Upload `CanSat ESP32D/CanSat_ESP_32D.ino`
+- Upload `CanSat/CanSat_ESP_32D/CanSat_ESP_32D.ino`
 - Verify at 115200 baud: `CANSAT MISSION READY`
 
 **BW16:**
 - Board: BW16 (or Arduino Leonardo)
-- Upload `Ground Station BW16/Ground_Station_BW16.ino`
+- Upload `Ground Station/Ground_Station_BW16/Ground_Station_BW16.ino`
 - Verify at 115200 baud: `GROUND STATION BOOTING`
 
 **Nano:**
 - Board: Arduino Nano (ATmega328P)
-- Upload `Ground Station NANO/Ground_Station_NANO.ino`
+- Upload `Ground Station/Ground_Station_NANO/Ground_Station_NANO.ino`
 - Verify at 9600 baud: `NANO BOOT`, `SD_CARD: OK`
 
 ### 5. Monitor & Verify
@@ -214,6 +214,9 @@ If all three show data → **System is operational!** 🎉
 ## Architecture
 
 ### Data Flow Pipeline
+
+![CanSat ESP32D Mermaid Diagram](CanSat/CanSat_ESP_32D_Mermaid_Diagram.png)
+![Ground Station Mermaid Diagram](Ground Station/Ground_Station_Mermaid_Diagram.png)
 
 ```
 1. TRANSMITTER (ESP32D)

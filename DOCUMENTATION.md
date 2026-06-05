@@ -39,10 +39,12 @@ This document provides a complete roadmap of all documentation in the CanSat Gro
 
 | File | Purpose | Examples |
 |------|---------|----------|
-| [CanSat ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat%20ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt) | Transmitter Serial Monitor output | Live telemetry table format |
-| [Ground Station BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground%20Station%20BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt) | Receiver Serial Monitor output | Parsed telemetry, PKT forwarding |
-| [Ground Station NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground%20Station%20NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt) | Logger boot & packet reception | SD write confirmation |
-| [Ground Station NANO/Ground_Station_NANO_Save_SD_Card.txt](Ground%20Station%20NANO/Ground_Station_NANO_Save_SD_Card.txt) | SD card file content example | cansat.txt format, timestamped blocks |
+| ![CanSat ESP32D Mermaid Diagram](CanSat/CanSat_ESP_32D_Mermaid_Diagram.png) | Diagram | Transmitter architecture diagram |
+| ![Ground Station Mermaid Diagram](Ground Station/Ground_Station_Mermaid_Diagram.png) | Diagram | Ground station architecture diagram |
+| [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt) | Transmitter Serial Monitor output | Live telemetry table format |
+| [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt) | Receiver Serial Monitor output | Parsed telemetry, PKT forwarding |
+| [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt) | Logger boot & packet reception | SD write confirmation |
+| [Ground_Station_NANO_Save_SD_Card.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt) | SD card file content example | cansat.txt format, timestamped blocks |
 
 ### 5. **Compliance & Legal**
 
@@ -84,13 +86,13 @@ This document provides a complete roadmap of all documentation in the CanSat Gro
 ### **I want to... Debug Serial Monitor Issues**
 → Check: [TUTORIALS.md](TUTORIALS.md) → Serial Monitor Debugging  
 → Reference examples:
-  - ESP32D: [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat%20ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt)
-  - BW16: [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground%20Station%20BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt)
-  - Nano: [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground%20Station%20NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt)
+  - ESP32D: [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt)
+  - BW16: [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt)
+  - Nano: [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt)
 
 ### **I want to... Analyze SD Card Data**
 → Follow: [TUTORIALS.md](TUTORIALS.md) → SD Card Data Analysis  
-→ Reference: [Ground_Station_NANO_Save_SD_Card.txt](Ground%20Station%20NANO/Ground_Station_NANO_Save_SD_Card.txt)  
+→ Reference: [Ground_Station_NANO_Save_SD_Card.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt)  
 → See example file format in [README.md](README.md) → SD Card Data Storage
 
 ### **I want to... Troubleshoot Issues**
@@ -108,10 +110,10 @@ This document provides a complete roadmap of all documentation in the CanSat Gro
 ### What to keep where
 
 - **Serial Monitor examples / raw traces** are kept in the board folders as evidence:
-  - `CanSat ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`
-  - `Ground Station BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`
-  - `Ground Station NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt`
-  - `Ground Station NANO/Ground_Station_NANO_Save_SD_Card.txt`
+  - `CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt`
+  - `Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt`
+  - `Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt`
+  - `Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt`
 - **LoRa + serial framing definitions** live in `README.md` and `SerialMonitor&LoRa Docs/`.
 
 See:
@@ -179,19 +181,19 @@ CanSat_Ground_Station/
 ├── REUSE.toml                         # SPDX license configuration
 ├── REUSE-toolbox.txt                  # License compliance guide
 │
-├── CanSat ESP32D/
+├── CanSat/CanSat_ESP_32D/
 │   ├── CanSat_ESP_32D.ino            # Transmitter firmware
 │   ├── CanSat_ESP_32D_Displaying_Serial_Monitor.txt  # Output example
 │   └── LoRa_Master.log              # Raw LoRa AT session log
 
 │
-├── Ground Station BW16/
+├── Ground Station/Ground_Station_BW16/
 │   ├── Ground_Station_BW16.ino       # Receiver firmware
 │   ├── Ground_Station_BW16_Displaying_Serial_Monitor.txt  # Output example
 │   └── LoRa_Slave.log              # Raw LoRa AT session log
 
 │
-├── Ground Station NANO/
+├── Ground Station/Ground_Station_NANO/
 │   ├── Ground_Station_NANO.ino       # Logger firmware
 │   ├── Ground_Station_NANO_Displaying_Serial_Monitor.txt  # Output example
 │   └── Ground_Station_NANO_Save_SD_Card.txt  # SD file example
@@ -225,9 +227,9 @@ CanSat_Ground_Station/
 1. Check [README.md](README.md) → Troubleshooting
 2. Review [TUTORIALS.md](TUTORIALS.md) → Serial Monitor Debugging
 3. Compare your Serial Monitor output with examples in:
-   - [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat%20ESP32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt)
-   - [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground%20Station%20BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt)
-   - [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground%20Station%20NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt)
+  - [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt)
+  - [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt)
+  - [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt)
 4. Check wiring in [Connection_Logic.md](Connection_Logic.md)
 5. If LoRa is the issue, review [SerialMonitor&LoRa Docs/lora-configuration.md](SerialMonitor&LoRa%20Docs/lora-configuration.md)
 
