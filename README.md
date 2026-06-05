@@ -25,14 +25,14 @@ The CanSat system is a **three-board telemetry chain** designed for high-altitud
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  [ESP32D]──LoRa 433MHz──→[BW16]──UART 9600──→[Arduino Nano]   │
+│  [ESP32D]──LoRa 433MHz──→[BW16]──UART 9600──→[Arduino Nano]     │
 │  Transmitter   ~12 km     Receiver             Logger + SD Card │
 │                         (LCD Display)                           │
 │                                                                 │
-│  • 6 Sensors         • LoRa RX           • Persistent Storage  │
-│  • LoRa TX           • ST7920 LCD        • Data Timestamping   │
-│  • 2s telemetry      • LED Indicators    • Human-readable      │
-│                      • Bridge Logic      • CSV-compatible      │
+│  • 6 Sensors         • LoRa RX           • Persistent Storage   │
+│  • LoRa TX           • ST7920 LCD        • Data Timestamping    │
+│  • 2s telemetry      • LED Indicators    • Human-readable       │
+│                      • Bridge Logic      • CSV-compatible       │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -173,12 +173,12 @@ See [TUTORIALS.md](TUTORIALS.md#lora-module-configuration) for step-by-step AT c
 
 **BW16:**
 - Board: BW16 (or Arduino Leonardo)
-- Upload `Ground Station/Ground_Station_BW16/Ground_Station_BW16.ino`
+- Upload `GroundStation/Ground_Station_BW16/Ground_Station_BW16.ino`
 - Verify at 115200 baud: `GROUND STATION BOOTING`
 
 **Nano:**
 - Board: Arduino Nano (ATmega328P)
-- Upload `Ground Station/Ground_Station_NANO/Ground_Station_NANO.ino`
+- Upload `GroundStation/Ground_Station_NANO/Ground_Station_NANO.ino`
 - Verify at 9600 baud: `NANO BOOT`, `SD_CARD: OK`
 
 ### 5. Monitor & Verify
