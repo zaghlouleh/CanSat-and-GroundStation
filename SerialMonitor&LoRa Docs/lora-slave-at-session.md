@@ -1,9 +1,9 @@
 # LoRa Slave AT Session (BW16)
 
-This file turns the raw Serial Monitor trace in `Ground Station/Ground_Station_BW16/LoRa_Slave.txt` into a readable “session” format.
+This file turns the raw Serial Monitor trace in `GroundStation/Ground_Station_BW16/LoRa_Slave.txt` into a readable “session” format.
 
 Source (raw trace):
-- `Ground Station/Ground_Station_BW16/LoRa_Slave.txt`
+- `GroundStation/Ground_Station_BW16/LoRa_Slave.txt`
 
 ---
 

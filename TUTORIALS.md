@@ -655,7 +655,7 @@ For a field setup with LiPo battery (on ESP32D):
    - BW16 may require a USB-to-UART adapter
 
 2. **Open Arduino IDE**
-   - File → Open → `Ground Station/Ground_Station_BW16/Ground_Station_BW16.ino`
+   - File → Open → `GroundStation/Ground_Station_BW16/Ground_Station_BW16.ino`
 
 3. **Select Board & Port**
    - Tools → Board → **BW16** (or Arduino Leonardo as fallback)
@@ -677,7 +677,7 @@ For a field setup with LiPo battery (on ESP32D):
    - Nano has a micro-USB port
 
 2. **Open Arduino IDE**
-   - File → Open → `Ground Station/Ground_Station_NANO/Ground_Station_NANO.ino`
+   - File → Open → `GroundStation/Ground_Station_NANO/Ground_Station_NANO.ino`
 
 3. **Select Board & Port**
    - Tools → Board → **Arduino Nano**

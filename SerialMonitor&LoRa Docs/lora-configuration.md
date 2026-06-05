@@ -3,7 +3,7 @@
 This page consolidates the LoRa AT settings discovered in the repository’s raw debug traces:
 
 - `CanSat/CanSat_ESP_32D/LoRa_Master.txt`
-- `Ground Station/Ground_Station_BW16/LoRa_Slave.txt`
+- `GroundStation/Ground_Station_BW16/LoRa_Slave.txt`
 
 > ⚠️ Notes
 > - The AT command set can differ slightly between LoRa module firmware versions.
