@@ -216,7 +216,7 @@ If all three show data → **System is operational!** 🎉
 ### Data Flow Pipeline
 
 ![CanSat ESP32D Mermaid Diagram](CanSat/CanSat_ESP_32D_Mermaid_Diagram.png)
-![Ground Station Mermaid Diagram](Ground Station/Ground_Station_Mermaid_Diagram.png)
+![Ground Station Mermaid Diagram](GroundStation/Ground_Station_Mermaid_Diagram.png)
 
 ```
 1. TRANSMITTER (ESP32D)
