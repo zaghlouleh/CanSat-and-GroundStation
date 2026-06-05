@@ -37,14 +37,12 @@ This document provides a complete roadmap of all documentation in the CanSat Gro
 
 ### 4. **Data Flow & Examples**
 
-| File | Purpose | Examples |
-|------|---------|----------|
-| ![CanSat ESP32D Mermaid Diagram](CanSat/CanSat_ESP_32D_Mermaid_Diagram.png) | Diagram | Transmitter architecture diagram |
-| ![Ground Station Mermaid Diagram](Ground Station/Ground_Station_Mermaid_Diagram.png) | Diagram | Ground station architecture diagram |
-| [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt) | Transmitter Serial Monitor output | Live telemetry table format |
-| [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt) | Receiver Serial Monitor output | Parsed telemetry, PKT forwarding |
-| [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt) | Logger boot & packet reception | SD write confirmation |
-| [Ground_Station_NANO_Save_SD_Card.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt) | SD card file content example | cansat.txt format, timestamped blocks |
+| Diagram | File | Purpose/Examples |
+|--------:|------|------------------|
+| <img src="CanSat/CanSat_ESP_32D_Mermaid_Diagram.png" alt="CanSat diagram" width="320"> | [CanSat_ESP_32D_Displaying_Serial_Monitor.txt](CanSat/CanSat_ESP_32D/CanSat_ESP_32D_Displaying_Serial_Monitor.txt) | Transmitter Serial Monitor output — live telemetry table format |
+| <img src="Ground Station/Ground_Station_Mermaid_Diagram.png" alt="Ground Station diagram" width="320"> | [Ground_Station_BW16_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_BW16/Ground_Station_BW16_Displaying_Serial_Monitor.txt) | Receiver Serial Monitor output — parsed telemetry and PKT forwarding |
+|  | [Ground_Station_NANO_Displaying_Serial_Monitor.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Displaying_Serial_Monitor.txt) | Logger boot & packet reception — SD write confirmation |
+|  | [Ground_Station_NANO_Save_SD_Card.txt](Ground Station/Ground_Station_NANO/Ground_Station_NANO_Save_SD_Card.txt) | SD card file content example — `cansat.txt` timestamped blocks |
 
 ### 5. **Compliance & Legal**
 
