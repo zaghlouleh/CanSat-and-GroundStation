@@ -44,7 +44,7 @@ The CanSat system is a **three-board telemetry chain** designed for high-altitud
 ✅ **Persistent logging** – microSD with timestamped telemetry blocks  
 ✅ **Status indicators** – Non-blocking LED blinks (LoRa, SD, LCD)  
 ✅ **Modular firmware** – Each board independently programmable  
-✅ **Open source** – MIT licensed, fully documented  
+✅ **Open source** – licensed, fully documented  
 
 ---
 
@@ -438,7 +438,7 @@ AT+LEVEL0              # Set LEVEL (Spreading Factor)
 | [TUTORIALS.md](TUTORIALS.md) | Step-by-step guides (LoRa config, uploads, debugging) |
 | [Connection_Logic.md](Connection_Logic.md) | Detailed wiring tables and pinout |
 | [SerialMonitor&LoRa Docs/](SerialMonitor&LoRa%20Docs/) | Serial output examples and LoRa AT sessions |
-| [LICENSE](LICENSE) | MIT License |
+| [LICENSE](LICENSE) | License |
 | [REUSE.toml](REUSE.toml) | SPDX reuse compliance |
 
 ### Serial Monitor Output Examples
@@ -567,7 +567,7 @@ We welcome contributions! Please:
 
 ## License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for full details.
+This project is licensed under the **This project is proprietary and all rights are reserved. It is publicly viewable for demonstration purposes only. See the LICENSE file for details.**. See [LICENSE](LICENSE) for full details.
 
 ```
 Copyright (c) 2026
